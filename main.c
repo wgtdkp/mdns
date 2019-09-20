@@ -160,6 +160,7 @@ main() {
 	for (int i = 0; i < 10; ++i) {
 		records = mdns_discovery_recv(sock, buffer, capacity, callback,
 		                              user_data);
+		printf("discovered %lu records\n", records);
 		sleep(1);
 	}
 
@@ -174,6 +175,7 @@ main() {
 	printf("Reading mDNS replies\n");
 	for (int i = 0; i < 10; ++i) {
 		records = mdns_query_recv(sock, buffer, capacity, callback, user_data, 1);
+		printf("received %lu records for query response\n", records);
 		sleep(1);
 	}
 
