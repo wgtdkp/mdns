@@ -33,6 +33,10 @@
 #define MDNS_STRING_CONST(s) (s), (sizeof((s))-1)
 #define MDNS_STRING_FORMAT(s) (int)((s).length), s.str
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 enum mdns_record_type {
 	MDNS_RECORDTYPE_IGNORE = 0,
 	//Address
@@ -159,5 +163,9 @@ mdns_record_parse_aaaa(const void* buffer, size_t size, size_t offset, size_t le
 size_t
 mdns_record_parse_txt(const void* buffer, size_t size, size_t offset, size_t length,
                       mdns_record_txt_t* records, size_t capacity);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif // MDNS_HPP_
