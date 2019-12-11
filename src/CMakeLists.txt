@@ -1,6 +1,3 @@
-set(TARGET_NAME mdns)
-
-set(SRCS mdns.c)
-
-add_library(${TARGET_NAME} STATIC ${SRCS})
-target_include_directories(${TARGET_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/include)
+add_library(mdns STATIC mdns.c)
+target_compile_features(mdns PUBLIC c_std_11)
+target_include_directories(mdns PUBLIC ${PROJECT_SOURCE_DIR}/include)
