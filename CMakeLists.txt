@@ -1,12 +1,12 @@
-project(mdns C)
-cmake_minimum_required(VERSION 3.0.2)
+cmake_minimum_required(VERSION 3.13.1)
+project(mdns LANGUAGES C)
 
-set(CMAKE_BUILD_TYPE Release)
-set(CMAKE_C_FLAGS "-std=c11 -Wall -Werror -Wfatal-errors")
+if (NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
 
-set(TARGET_NAME mdns)
+# TODO(wgtdkp): kill CMAKE_XXX_FLAGS
+set(CMAKE_C_FLAGS "-std=gnu11 -Wall -Werror -Wfatal-errors")
 
-set(SRCS mdns.c)
-add_library(${TARGET_NAME} STATIC ${SRCS})
-add_executable(mdns-test main.c)
-target_link_libraries(mdns-test ${TARGET_NAME})
+add_subdirectory(src)
+add_subdirectory(tests)

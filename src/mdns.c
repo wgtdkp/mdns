@@ -1,4 +1,4 @@
-#include "mdns.h"
+#include <mdns/mdns.h>
 
 #include <fcntl.h>
 
