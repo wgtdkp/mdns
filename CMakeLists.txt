@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.13.1)
 project(mdns LANGUAGES C)
 
+option(MDNS_EXAMPLE "Build mDNS example" ON)
+
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
