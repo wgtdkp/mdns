@@ -1,7 +1,5 @@
-add_library(mdns)
-
-target_sources(mdns
-    PRIVATE mdns.c
+add_library(mdns
+    mdns.c
 )
 
 target_include_directories(mdns

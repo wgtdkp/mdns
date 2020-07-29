@@ -1,7 +1,5 @@
-add_executable(mdns-example)
-
-target_sources(mdns-example
-    PRIVATE main.c
+add_executable(mdns-example
+    main.c
 )
 
 target_compile_options(mdns-example
